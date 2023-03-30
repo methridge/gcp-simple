@@ -101,11 +101,12 @@ be placed.
 |------|---------|
 | terraform | ~> 1.0 |
 | google | ~>4.55 |
-| hcp | ~>0.54 |
 
 ## Providers
 
-No providers.
+| Name | Version |
+|------|---------|
+| google | ~>4.55 |
 
 ## Modules
 
@@ -113,7 +114,9 @@ No modules.
 
 ## Resources
 
-No resources.
+| Name | Type |
+|------|------|
+| [google_compute_instance.simple_vm](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_instance) | resource |
 
 ## Inputs
 

@@ -11,10 +11,6 @@ terraform {
       source  = "hashicorp/google"
       version = "~>4.55"
     }
-    hcp = {
-      source  = "hashicorp/hcp"
-      version = "~>0.54"
-    }
   }
 }
 
@@ -25,11 +21,4 @@ provider "google" {
   # GOOGLE_PROJECT="..."
   # GOOGLE_REGION="..."
   # GOOGLE_ZONE="..."
-}
-
-provider "hcp" {
-  # Configuration options
-  # Environment variables needed for auth
-  # HCP_CLIENT_ID="..."
-  # HCP_CLIENT_SECRET="..."
 }
