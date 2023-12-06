@@ -1,11 +1,20 @@
 repos:
+  - repo: local
+    hooks:
+      - id: trufflehog
+        name: TruffleHog
+        description: Detect secrets in your data.
+        entry: trufflehog git file://. --since-commit HEAD --fail
+        language: golang
+        pass_filenames: false
+        stages: ["commit", "push"]
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.4.0
+    rev: v4.5.0
     hooks:
       - id: check-merge-conflict
       - id: end-of-file-fixer
   - repo: https://github.com/antonbabenko/pre-commit-terraform
-    rev: v1.77.1
+    rev: v1.83.6
     hooks:
       - id: terraform_fmt
       - id: terraform_validate
@@ -18,12 +27,8 @@ repos:
         args:
           - --args=--config=__GIT_WORKING_DIR__/.tflint.hcl
       - id: terraform_checkov
-      # - id: terraform_tfsec
-      #   args:
-      #     - --args=--config-file=__GIT_WORKING_DIR__/.tfsec.json
-      #     - --args=--tfvars-file="terraform.tfvars"
       - id: infracost_breakdown
         args:
           - --args=--path=.
           - --args=--terraform-var-file="terraform.tfvars"
-        verbose: true
+        # verbose: true
