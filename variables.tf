@@ -5,14 +5,20 @@
 ###############################################################################
 
 # Required Variables (no default values)
-# variable "environment" {
-#   type        = string
-#   description = "Application Environment (dev|prod)"
-# }
+variable "prefix" {
+  type        = string
+  description = "Prefix for VM names"
+}
 
 # Variables with Defaults
-# variable "instance_type" {
-#   type        = string
-#   description = "Instance Type"
-#   default     = "t3.micro"
-# }
+variable "machine_type" {
+  type        = string
+  description = "Machine type for VMs"
+  default     = "f1-micro"
+}
+
+variable "node_count" {
+  type        = number
+  description = "Number of VMs to create"
+  default     = 1
+}

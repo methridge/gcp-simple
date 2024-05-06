@@ -9,13 +9,13 @@ resource "google_compute_instance" "simple_vm" {
   # checkov:skip=CKV_GCP_38: ADD REASON
   # checkov:skip=CKV_GCP_39: ADD REASON
   # checkov:skip=CKV_GCP_40: ADD REASON
-  name         = "simple-vm"
-  machine_type = "f1-micro"
-  zone         = "us-central1-a"
+  count        = var.node_count
+  name         = "${var.prefix}-${count.index}"
+  machine_type = var.machine_type
 
   boot_disk {
     initialize_params {
-      image = "ubuntu-os-cloud/ubuntu-2204-lts"
+      image = data.google_compute_image.ubuntu_image.self_link
     }
   }
 
