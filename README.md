@@ -2,7 +2,7 @@
 
 This repository contains simple Terraform code to deploy a GCP VM.
 
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- BEGIN_TF_DOCS -->
 ## Requirements
 
 | Name | Version |
@@ -40,4 +40,4 @@ No modules.
 | Name | Description |
 |------|-------------|
 | public\_ip | Public IP address of the VMs |
-<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- END_TF_DOCS -->
